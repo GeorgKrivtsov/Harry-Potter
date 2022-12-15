@@ -1,8 +1,8 @@
 package boxOfSweets;
- abstract class Sweets {
-     String name;
-     int weight;
+abstract class Sweets {
+    String name;
+    int weight;
+    int price;
 
 
-
- }
+}
