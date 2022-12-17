@@ -3,13 +3,13 @@ public abstract class Sweets {
     private String name;
     private int weight;
     private int price;
-    private int id;
 
-    Sweets (String name, int weight, int price, int id) {
+
+    Sweets (String name, int weight, int price) {
         this.name = name;
         this.weight = weight;
         this.price = price;
-        this.id = id;
+
     }
 
     public String getName() {
@@ -23,8 +23,5 @@ public abstract class Sweets {
     public int getPrice() {
         return price;
     }
-
-    public int getId() {
-        return id;
-    }
+    
 }
