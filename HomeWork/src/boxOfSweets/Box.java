@@ -18,7 +18,7 @@ public class Box implements BoxInterface {
         int countCookies = sc.nextInt();
 
         for (int i = 1; i < countCookies + 1; i++) {
-            Cookies cookies = new Cookies("Cookies", 5, 10, i);
+            Cookies cookies = new Cookies("Cookies", 5, 10, 3);
             box.addSweets(cookies);
         }
 
@@ -26,7 +26,7 @@ public class Box implements BoxInterface {
         int countChocolate = sc.nextInt();
 
         for (int i = 1; i < countChocolate + 1; i++) {
-            Chocolate chocolate = new Chocolate("Chocolate", 10, 15, i);
+            Chocolate chocolate = new Chocolate("Chocolate", 10, 15, 65);
             box.addSweets(chocolate);
         }
 
@@ -34,7 +34,7 @@ public class Box implements BoxInterface {
         int countCandies = sc.nextInt();
 
         for (int i = 1; i < countCandies + 1; i++) {
-            Candies candies = new Candies("Candies", 3, 5, i);
+            Candies candies = new Candies("Candies", 3, 5, "caramel");
             box.addSweets(candies);
         }
 
@@ -52,10 +52,13 @@ public class Box implements BoxInterface {
         int i = sc.nextInt();
         switch (i){
             case 1: box.smartSortedByWeight();
+            break;
             case 2: box.smartSortedByPrice();
-
+            break;
         }
 
+        System.out.println("В коробке остались:");
+        box.getAllInfo();
     }
 
 
