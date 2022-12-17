@@ -13,5 +13,7 @@ public interface BoxInterface {
 
     void addSweets(Object o);
 
-    void smartSort();
+    void smartSortedByWeight();
+
+    void smartSortedByPrice();
 }
