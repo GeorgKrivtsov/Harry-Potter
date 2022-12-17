@@ -2,8 +2,15 @@ package boxOfSweets;
 
 public class Chocolate extends Sweets{
 
-    Chocolate(String name, int weight, int price, int id) {
-        super(name, weight, price, id);
+    private double contentChoco;
+
+    Chocolate(String name, int weight, int price, int count) {
+        super(name, weight, price);
+        this.contentChoco = count;
+    }
+
+    public double getContentChoco() {
+        return contentChoco;
     }
 
     @Override
@@ -11,7 +18,7 @@ public class Chocolate extends Sweets{
         return "Chocolate{" +
                 "weight=" + getWeight() +
                 ", price=" + getPrice() +
-                ", id=" + getId() +
+                ", contentChoco=" + getContentChoco()+"% " +
                 '}';
     }
 }

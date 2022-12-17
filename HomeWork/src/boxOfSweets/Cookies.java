@@ -1,9 +1,14 @@
 package boxOfSweets;
 
 public class Cookies extends Sweets {
+    private int count;
+    Cookies(String name, int weight, int price, int count) {
+        super(name, weight, price);
+        this.count = count;
+    }
 
-    Cookies(String name, int weight, int price, int id) {
-        super(name, weight, price, id);
+    public int getCount() {
+        return count;
     }
 
     @Override
@@ -11,7 +16,7 @@ public class Cookies extends Sweets {
         return "Cookies{" +
                 "weight=" + getWeight() +
                 ", price=" + getPrice() +
-                ", id=" + getId() +
+                ", count= " + getCount() +
                 '}';
     }
 }

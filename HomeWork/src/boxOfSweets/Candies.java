@@ -1,9 +1,15 @@
 package boxOfSweets;
 
 public class Candies extends Sweets {
+    private String type;
+    Candies(String name, int weight, int price, String type ){
 
-    Candies(String name, int weight, int price, int id) {
-        super(name, weight, price, id);
+        super(name, weight, price);
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override
@@ -11,7 +17,7 @@ public class Candies extends Sweets {
         return "Candies{" +
                 "weight=" + getWeight() +
                 ", price=" + getPrice() +
-                ", id=" + getId() +
+                ", type=" + getType() +
                 '}';
     }
 }
