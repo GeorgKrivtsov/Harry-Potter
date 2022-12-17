@@ -48,6 +48,13 @@ public class Box implements BoxInterface {
 
         box.removeSweets();
 
+        System.out.println("Хотите оптимизировать по весу(1) или по цене(2)?");
+        int i = sc.nextInt();
+        switch (i){
+            case 1: box.smartSortedByWeight();
+            case 2: box.smartSortedByPrice();
+
+        }
 
     }
 
@@ -108,14 +115,49 @@ public class Box implements BoxInterface {
     }*/
 
     @Override
-    public void smartSort() {
-
-        System.out.println("Хотите отсортировать по весу(1) или по цене(2)?");
+    public void smartSortedByWeight() {
+        System.out.println("Вес подарка: " + getWeight());
+        System.out.println("Ограничение по весу?");
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
 
+        int temp = 0;
+        int tempWeight = 0;
 
+        while (getWeight() > i) {
+                for (int k = 0; k > boxOfSweets.size(); i++) {
+                    if (tempWeight > boxOfSweets.get(i).getWeight()) {
+                        tempWeight = boxOfSweets.get(i).getWeight();
+                        temp = k;
+                    }
+                }
+                boxOfSweets.remove(temp);
+        }
 
+        System.out.println("Вес коробки: " + getWeight());
 
+    }
+
+    @Override
+    public void smartSortedByPrice() {
+        System.out.println("Вес подарка: " + getWeight());
+        System.out.println("Ограничение по весу?");
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+
+        int temp = 0;
+        int tempPrice = 0;
+
+        while (getWeight() > i) {
+            for (int k = 0; k > boxOfSweets.size(); i++) {
+                if (tempPrice > boxOfSweets.get(i).getPrice()) {
+                    tempPrice = boxOfSweets.get(i).getPrice();
+                    temp = k;
+                }
+            }
+            boxOfSweets.remove(temp);
+        }
+
+        System.out.println("Вес коробки: " + getWeight());
     }
 }
