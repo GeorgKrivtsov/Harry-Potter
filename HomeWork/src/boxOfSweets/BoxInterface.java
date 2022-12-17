@@ -5,11 +5,13 @@ public interface BoxInterface {
 
     void removeSweets();
 
-    void getWeight();
+    int getWeight();
 
-    void getPrice();
+    int getPrice();
 
     void getAllInfo();
 
     void addSweets(Object o);
+
+    void smartSort();
 }
