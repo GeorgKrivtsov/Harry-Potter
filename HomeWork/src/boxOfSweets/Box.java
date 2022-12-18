@@ -18,7 +18,7 @@ public class Box implements BoxInterface {
         int countCookies = sc.nextInt();
 
         for (int i = 1; i < countCookies + 1; i++) {
-            Cookies cookies = new Cookies("Cookies", 5, 10, i);
+            Cookies cookies = new Cookies("Cookies", 5, 10, 3);
             box.addSweets(cookies);
         }
 
@@ -26,7 +26,7 @@ public class Box implements BoxInterface {
         int countChocolate = sc.nextInt();
 
         for (int i = 1; i < countChocolate + 1; i++) {
-            Chocolate chocolate = new Chocolate("Chocolate", 10, 15, i);
+            Chocolate chocolate = new Chocolate("Chocolate", 10, 15, 65);
             box.addSweets(chocolate);
         }
 
@@ -34,7 +34,7 @@ public class Box implements BoxInterface {
         int countCandies = sc.nextInt();
 
         for (int i = 1; i < countCandies + 1; i++) {
-            Candies candies = new Candies("Candies", 3, 5, i);
+            Candies candies = new Candies("Candies", 3, 5, "caramel");
             box.addSweets(candies);
         }
 
@@ -52,10 +52,13 @@ public class Box implements BoxInterface {
         int i = sc.nextInt();
         switch (i){
             case 1: box.smartSortedByWeight();
+            break;
             case 2: box.smartSortedByPrice();
-
+            break;
         }
 
+        System.out.println("В коробке остались:");
+        box.getAllInfo();
     }
 
 
@@ -122,12 +125,12 @@ public class Box implements BoxInterface {
         int i = scanner.nextInt();
 
         int temp = 0;
-        int tempWeight = 0;
+        int tempWeight = Integer.MAX_VALUE;
 
         while (getWeight() > i) {
-                for (int k = 0; k > boxOfSweets.size(); i++) {
-                    if (tempWeight > boxOfSweets.get(i).getWeight()) {
-                        tempWeight = boxOfSweets.get(i).getWeight();
+                for (int k = 0; k < boxOfSweets.size(); k++) {
+                    if (tempWeight > boxOfSweets.get(k).getWeight()) {
+                        tempWeight = boxOfSweets.get(k).getWeight();
                         temp = k;
                     }
                 }
@@ -146,12 +149,12 @@ public class Box implements BoxInterface {
         int i = scanner.nextInt();
 
         int temp = 0;
-        int tempPrice = 0;
+        int tempPrice = Integer.MAX_VALUE;
 
         while (getWeight() > i) {
-            for (int k = 0; k > boxOfSweets.size(); i++) {
-                if (tempPrice > boxOfSweets.get(i).getPrice()) {
-                    tempPrice = boxOfSweets.get(i).getPrice();
+            for (int k = 0; k < boxOfSweets.size(); k++) {
+                if (tempPrice > boxOfSweets.get(k).getPrice()) {
+                    tempPrice = boxOfSweets.get(k).getPrice();
                     temp = k;
                 }
             }
