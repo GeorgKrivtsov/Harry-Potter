@@ -128,13 +128,13 @@ public class Box implements BoxInterface {
         int tempWeight = Integer.MAX_VALUE;
 
         while (getWeight() > i) {
-                for (int k = 0; k < boxOfSweets.size()-1; k++) {
-                    if (tempWeight > boxOfSweets.get(k).getWeight()) {
-                        tempWeight = boxOfSweets.get(k).getWeight();
-                        temp = k;
-                    }
+            for (int k = 0; k < boxOfSweets.size()-1; k++) {
+                if (tempWeight > boxOfSweets.get(k).getWeight()) {
+                    tempWeight = boxOfSweets.get(k).getWeight();
+                    temp = k;
                 }
-                boxOfSweets.remove(temp);
+            }
+            boxOfSweets.remove(temp);
             tempWeight = Integer.MAX_VALUE;
         }
 
