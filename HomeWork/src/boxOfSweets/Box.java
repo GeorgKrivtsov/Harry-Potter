@@ -128,9 +128,9 @@ public class Box implements BoxInterface {
         int tempWeight = 0;
 
         while (getWeight() > i) {
-                for (int k = 0; k > boxOfSweets.size(); i++) {
-                    if (tempWeight > boxOfSweets.get(i).getWeight()) {
-                        tempWeight = boxOfSweets.get(i).getWeight();
+                for (int k = 0; k < boxOfSweets.size()-1; k++) {
+                    if (tempWeight > boxOfSweets.get(k).getWeight()) {
+                        tempWeight = boxOfSweets.get(k).getWeight();
                         temp = k;
                     }
                 }
