@@ -128,13 +128,14 @@ public class Box implements BoxInterface {
         int tempWeight = Integer.MAX_VALUE;
 
         while (getWeight() > i) {
-                for (int k = 0; k < boxOfSweets.size(); k++) {
+                for (int k = 0; k < boxOfSweets.size()-1; k++) {
                     if (tempWeight > boxOfSweets.get(k).getWeight()) {
                         tempWeight = boxOfSweets.get(k).getWeight();
                         temp = k;
                     }
                 }
                 boxOfSweets.remove(temp);
+            tempWeight = Integer.MAX_VALUE;
         }
 
         System.out.println("Вес коробки: " + getWeight());
@@ -152,13 +153,14 @@ public class Box implements BoxInterface {
         int tempPrice = Integer.MAX_VALUE;
 
         while (getWeight() > i) {
-            for (int k = 0; k < boxOfSweets.size(); k++) {
+            for (int k = 0; k < boxOfSweets.size()-1; k++) {
                 if (tempPrice > boxOfSweets.get(k).getPrice()) {
                     tempPrice = boxOfSweets.get(k).getPrice();
                     temp = k;
                 }
             }
             boxOfSweets.remove(temp);
+            tempPrice = Integer.MAX_VALUE;
         }
 
         System.out.println("Вес коробки: " + getWeight());
