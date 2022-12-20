@@ -9,10 +9,9 @@ public class TextReading {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        HashMap<String, Integer> map = new HashMap<String,Integer>();
 
         System.out.println("Введите путь к файлу:");
-        // /Users/georgijkrivcov/Desktop/текст для примера.txt
+        //пример пути: /Users/georgijkrivcov/Desktop/текст для примера.txt
 
         String path = sc.nextLine();
 
@@ -21,6 +20,8 @@ public class TextReading {
 
         int arraysSize = arrayString.length;
         System.out.println("В тексте " + arraysSize + " слов");
+
+        HashMap<String, Integer> map = new HashMap<String,Integer>();
 
         //Заполняем мапу
         for (String s : arrayString) {
@@ -36,20 +37,30 @@ public class TextReading {
         //выводим список всех слов
         for (String key : map.keySet()) {
             Integer value = map.get(key);
-            System.out.println("Слово " + key + " -> Содержится " + value + " раз (" + (double)(value * 100) / arraysSize + " %)");
+            System.out.println("Слово " + key + " -> " + value + " (" + (double)(value * 100) / arraysSize + " %)");
         }
 
 
-        String tempKey = null;
+        List<String> keys = new ArrayList<>();
         int maxValue = 0;
 
         for (String key : map.keySet()) {
             if(map.get(key) > maxValue) {
                 maxValue = map.get(key);
-                tempKey = key;
             }
         }
-        System.out.println("Самое частое слово: " + tempKey + " упоминается " + maxValue + " раз");
+
+        for ( String key : map.keySet()) {
+            if (map.get(key) == maxValue){
+                keys.add(key);
+            }
+        }
+
+
+        System.out.println("Самое частое слово или слова:");
+        for (String str : keys) {
+            System.out.println(str + "-->" + map.get(str) + "раз");
+        }
 
 
     }
