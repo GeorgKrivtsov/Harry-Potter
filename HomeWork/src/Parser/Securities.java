@@ -1,30 +1,30 @@
 package Parser;
 
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class Securities {
     private String name;
-    private String[] currency;
-    private int code;
+    private List<String> currency;
+    private String code;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date date;
 
-    public Securities(String name, String[] currency, int code, Date date) {
-        this.name = name;
-        this.currency = currency;
-        this.code = code;
-        this.date = date;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public String[] getCurrency() {
+    public List<String> getCurrency() {
         return currency;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -36,7 +36,7 @@ public class Securities {
     public String toString() {
         return "Securities{" +
                 "name='" + name + '\'' +
-                ", currency=" + Arrays.toString(currency) +
+                ", currency=" + currency +
                 ", code=" + code +
                 ", date=" + date +
                 '}';

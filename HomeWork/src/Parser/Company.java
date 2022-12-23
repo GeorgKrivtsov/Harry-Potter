@@ -1,25 +1,22 @@
 package Parser;
 
 
-import java.security.Security;
-import java.text.ParseException;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
-public class Companies {
+public class Company {
     private Integer id;
     private String name;
     private String address;
-    private int phoneNumber;
-    private int inn;
+    private String phoneNumber;
+    private String inn;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date founded;
 
     private List<Securities> securities;
-
-    String format = "dd/MM/yyyy";
-    SimpleDateFormat dateFormat = new SimpleDateFormat(format);
 
 
     public int getId() {
@@ -34,11 +31,11 @@ public class Companies {
         return address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public int getInn() {
+    public String getInn() {
         return inn;
     }
 

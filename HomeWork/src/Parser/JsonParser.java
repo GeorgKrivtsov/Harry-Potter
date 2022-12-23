@@ -1,31 +1,19 @@
 package Parser;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.IOException;
-import com.google.gson.Gson;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
-import java.io.FileReader;
-import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class GsonParser {
+public class JsonParser {
+
+    public Companies parse() throws IOException {
 
 
-    public Companies parse() {
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        Gson gson = new Gson();
+        return objectMapper.readValue(new File("Test.json"), Companies.class);
 
-        try(FileReader reader = new FileReader("Test.json")) {
-
-            Companies companies = gson.fromJson(reader, Companies.class);
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден");;
-        } catch (IOException e) {
-            System.out.println("Другая ошибка");;
-        }
-
-        return null;
     }
 
 
