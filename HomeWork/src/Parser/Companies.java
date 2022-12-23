@@ -48,4 +48,17 @@ public class Companies {
     public Securities getSecurities() {
         return securities;
     }
+
+    @Override
+    public String toString() {
+        return "Companies{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", adress='" + adress + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", inn=" + inn +
+                ", founded=" + founded +
+                ", securities=" + securities +
+                '}';
+    }
 }
