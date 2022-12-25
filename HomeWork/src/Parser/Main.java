@@ -58,7 +58,7 @@ public class Main {
         //Определение уоличества бумаг
         for (int i = 0; i < companies.getCompanies().size(); i++) {
             for (int k = 0; k < companies.getCompanies().get(i).getSecurities().size() - 1; k++) {
-                count += k;
+                count ++;
             }
         }
         System.out.println(count);
