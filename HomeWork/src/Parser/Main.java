@@ -47,7 +47,7 @@ public class Main {
         //Определение действующих бумаг через stream()
         companies.getCompanies().stream()
                 .forEach(s -> s.getSecurities().stream()
-                        .filter(e -> e.getDate().after(date))
+                        .filter(e -> e.getDate().before(date))
                         .forEach(e -> System.out.println("code: " + e.getCode() +
                                 " Название бумаги: " + e.getName() +
                                 " Дата истечения: " + dateFormat.format(e.getDate()) +
