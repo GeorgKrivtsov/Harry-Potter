@@ -117,7 +117,8 @@ public class Main {
                                 .forEach(s -> s.getCurrency().stream()
                                         .filter(n -> n.equalsIgnoreCase(currency))
                                         .forEach(n -> System.out.println("id компании: " + e.getId() +
-                                                " Название акции:  " + s.getName()))));
+                                                " Название акции:  " + s.getName() +
+                                                " Код акции: " + s.getCode()))));
 
 
 
